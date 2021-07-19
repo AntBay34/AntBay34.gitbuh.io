@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="assets/img/ico/apple-touch-icon-57x57.png">
+
+    <title>Kompleet by Distinctive Themes</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/plugins.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/pe-icons.css" rel="stylesheet">
+
+    <!-- <link href="assets/lightbox2-2.11.3/dist/css/lightbox.css" rel="stylesheet" /> -->
+    <style>
+    
+        .row > .column {
+          padding: 0 8px;
+        }
+        
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Create four equal columns that floats next to eachother */
+        .column {
+          float: left;
+          width: 25%;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 5000;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: black;
+        }
+        
+        /* Modal Content */
+        .modal-content {
+            z-index: 5000;
+          position: relative;
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          width: 90%;
+          max-width: 1200px;
+        }
+        
+        /* The Close Button */
+        .close {
+            opacity: 1 !important;
+          z-index: 10000;
+          color: white;
+          position: absolute;
+          top: 45px;
+          right: 40px;
+          font-size: 50px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        /* Hide the slides by default */
+        .mySlides {
+          display: none;
+        }
+        
+        /* Next & previous buttons */
+        .prev,
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -50px;
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          -webkit-user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* Caption text */
+        .caption-container {
+          text-align: center;
+          background-color: black;
+          padding: 2px 16px;
+          color: white;
+        }
+        
+        img.demo {
+          opacity: 0.6;
+        }
+        
+        .active,
+        .demo:hover {
+          opacity: 1;
+        }
+        
+        img.hover-shadow {
+          transition: 0.3s;
+        }
+        
+        .hover-shadow:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .none {
+            display: none;
+        }
+            body.show {
+            overflow: hidden !important;
+        }
+        </style>
+  
+        <script>
+          // Open the Modal
+          function openModal() {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("page-top").style.overflow = "hidden";
+            var divDisplayed = document.getElementsByClassName("displayed");
+            for(var i=0;i<divDisplayed.length;i++)
+                {
+                    divDisplayed[i].style.display='none';
+                }
+          }
+          
+          // Close the Modal
+          function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            document.getElementById("page-top").style.overflow = "scroll";
+            var divDisplayed = document.getElementsByClassName("displayed");
+            for(var i=0;i<divDisplayed.length;i++)
+                {
+                    divDisplayed[i].style.display='block';
+                }
+          }
+          
+          var slideIndex = 1;
+          showSlides(slideIndex);
+          
+          // Next/previous controls
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          // Thumbnail image controls
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+          }
+          </script>
+    
+</head>
+
+<body id="page-top" class="index">
+
+    <div class="master-wrapper">
+
+        <div class="preloader">
+            <div class="preloader-img">
+               <span id="landDia" class="loading-animation animate-flicker"> <!-- <img src="assets/img/loading.GIF" alt="loading"/> --></span>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default navbar-fixed-top fadeInDown" data-wow-delay="0.5s">
+            <div class="top-bar smoothie hidden-xs">
+                <div class="container">
+                    <div class="clearfix">
+                        <ul class="list-inline social-links wow pull-left">
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+
+                        <div class="pull-right text-right">
+                            <ul class="list-inline">
+                                <li>
+                                    <div><i class="fa fa-envelope-o"></i>contact@herault-tourisme.fr</div>
+                                </li>
+                                <li>
+                                    <div class="meta-item"><i class="fa fa-mobile"></i> +33456231789</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand smoothie logo logo-light" href="perso2.html"><img src="assets/perso/logo2.jpg" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="perso2.html"><img src="assets/perso/logo2.jpg" alt="logo"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="main-navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a id="home" href="#" class="dropdown-toggle" >Accueil </a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home - </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index-agency-1.html">Agency - Layout 1</a></li>
+                                        <li><a href="index-agency-2.html">Agency - Layout 2</a></li>
+                                        <li><a href="index-agency-3.html">Agency - Layout 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home - Portfolio</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index-portfolio-1.html">Portfolio - Layout 1</a></li>
+                                        <li><a href="index-portfolio-2.html">Portfolio - Layout 2</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home - Corporate</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index-corporate-1.html">Corporate - Layout 1</a></li>
+                                        <li><a href="index-corporate-2.html">Corporate - Layout 2</a></li>
+                                        <li><a href="index-corporate-3.html">Corporate - Layout 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home - Landing Page</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index-landing-1.html">Landing Page - Layout 1</a></li>
+                                        <li><a href="index-landing-2.html">Landing Page - Layout 2</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home - Blog</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index-blog-1.html">Blog - Layout 1</a></li>
+                                        <li><a href="index-blog-2.html">Blog - Layout 2</a></li>
+                                        <li><a href="index-blog-3.html">Blog - Layout 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index-app.html">Home - App</a></li>
+                                <li><a href="index-restaurant.html">Home - Restaurant</a></li>
+                                
+                                <li><a href="index-minimal.html">Home - Minimal</a></li>
+                                <li><a href="index-countdown.html">Home - Coming Soon</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_5" class="dropdown-toggle page-scroll" data-hover="dropdown" >Inspiration</a>
+                            <!-- class="btn btn-primary btn-white mt30 page-scroll" data-wow-delay="0.6s" -->
+                            <!-- <ul class="dropdown-menu" role="menu">
+                                <li><a href="header-1.html">Header 1</a></li>
+                                <li><a href="header-2.html">Header 2</a></li>
+                                <li><a href="header-3.html">Header 3</a></li>
+                                <li><a href="header-4.html">Header 4</a></li>
+                                <li><a href="header-5.html">Header 5</a></li>
+                                <li><a href="header-6.html">Header 6</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_2" class="dropdown-toggle page-scroll" data-hover="dropdown" >Séjourner</a>
+                            <!-- <ul class="dropdown-menu" role="menu">
+                                <li><a href="footer-1.html">Footer 1</a></li>
+                                <li><a href="footer-2.html">Footer 2</a></li>
+                                <li><a href="footer-3.html">Footer 3</a></li>
+                                <li><a href="footer-4.html">Footer 4</a></li>
+                                <li><a href="footer-5.html">Footer 5</a></li>
+                                <li><a href="footer-6.html">Footer 6</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_3" class="dropdown-toggle page-scroll" data-hover="dropdown">Bien manger</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - About Us</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="about-us-1.html">About Us - Layout 1</a></li>
+                                        <li><a href="about-us-2.html">About Us - Layout 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - Services</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="services-1.html">Services - Layout 1</a></li>
+                                        <li><a href="services-2.html">Services - Layout 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages - Contact</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="contact-us-1.html">Contact - Layout 1</a></li>
+                                        <li><a href="contact-us-2.html">Contact - Layout 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="404.html">Pages - 404</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_4" class="dropdown-toggle page-scroll" data-hover="dropdown">Activités</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Full Grid</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio-full-grid-4col.html">Full Grid - 4 Columns</a></li>
+                                        <li><a href="portfolio-full-grid-3col.html">Full Grid - 3 Columns</a></li>
+                                        <li><a href="portfolio-full-grid-2col.html">Full Grid - 2 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Boxed Grid</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio-boxed-grid-4col.html">Boxed Grid - 4 Columns</a></li>
+                                        <li><a href="portfolio-boxed-grid-3col.html">Boxed Grid - 3 Columns</a></li>
+                                        <li><a href="portfolio-boxed-grid-2col.html">Boxed Grid - 2 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Full Masonry</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio-full-masonry-4col.html">Full Masonry - 4 Columns</a></li>
+                                        <li><a href="portfolio-full-masonry-3col.html">Full Masonry - 3 Columns</a></li>
+                                        <li><a href="portfolio-full-masonry-2col.html">Full Masonry - 2 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Boxed Masonry</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio-boxed-masonry-4col.html">Boxed Masonry - 4 Columns</a></li>
+                                        <li><a href="portfolio-boxed-masonry-3col.html">Boxed Masonry - 3 Columns</a></li>
+                                        <li><a href="portfolio-boxed-masonry-2col.html">Boxed Masonry - 2 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Portfolio</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="single-portfolio-slider.html">Single Portfolio - Slider</a></li>
+                                        <li><a href="single-portfolio-carousel.html">Single Portfolio - Carousel</a></li>
+                                        <li><a href="single-portfolio-video.html">Single Portfolio - Video</a></li>
+                                        <li><a href="single-portfolio-fullscreen-slider.html">Single Portfolio - Fullscreen Slider</a></li>
+                                        <li><a href="single-portfolio-fullscreen-video.html">Single Portfolio - Fullscreen Video</a></li>
+                                        <li><a href="single-portfolio-image-list.html">Single Portfolio - Image List</a></li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_5" class="dropdown-toggle page-scroll" data-hover="dropdown">Blog</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog Feeds</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog-grid-2col.html">Blog Grid - 2 Column</a></li>
+                                        <li><a href="blog-grid-3col.html">Blog Grid - 3 Column</a></li>
+                                        <li><a href="blog-grid-2col-sidebar.html">Blog Grid - 2 Column Sidebar</a></li>
+                                        <li><a href="blog-grid-3col-sidebar.html">Blog Grid - 3 Column Sidebar</a></li>
+                                        <li><a href="blog-traditional.html">Blog Traditional</a></li>
+                                        <li><a href="blog-traditional-sidebar.html">Blog Traditional Sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Single Posts</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="single-post-fullwidth.html">Single Post - Full Width</a></li>
+                                        <li><a href="single-post-thin.html">Single Post - Thin</a></li>
+                                        <li><a href="single-post-left-sidebar.html">Single Post - Left Sidebar</a></li>
+                                        <li><a href="single-post-right-sidebar.html">Single Post - Right Sidebar</a></li>
+                                        
+                                        
+                                    </ul>
+                                </li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#anchor_6" class="dropdown-toggle page-scroll" data-hover="dropdown" >Contact</a>
+                            <!-- <ul class="dropdown-menu" role="menu">
+                                <li><a href="index-shop.html">Home Shop</a></li>
+                                <li><a href="single-product.html">Single Product</a></li>
+                            </ul> -->
+                        </li>
+                        <li><a href="#search"><i class="pe-7s-search"></i></a></li>
+                        <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div id="search-wrapper">
+            <button type="button" class="close">×</button>
+            <div class="vertical-center text-center">
+                <form>
+                    <input type="search" value="" placeholder="que recherchez vous ?" />
+                    <button type="submit" class="btn btn-primary btn-white">Rechercher</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header id="headerwrap" class="backstretched special-max-height no-overlay">
+            <div class="container vertical-center">
+                <div class="intro-text vertical-center text-center smoothie">
+                    <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Bienvenue en Hérault !</div>
+                    <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">visiter <span class="rotate">Saint Guilhem le désert, Le Canal du midi, Le Lac du Salagou, Le Cirque de Navacelles</span></div>
+                    <a href="#welcome" class="btn btn-primary btn-white mt30 page-scroll" data-wow-delay="0.6s">lire plus</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="welcome">
+            <div class="section-inner">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mb100 wow">
+                            <h2 id="anchor_1" class="section-heading">HÉRAULT, LA TERREDE L'AIR & DE L'EAU
+                            </h2>
+                            <h3 class="section-subheading secondary-font">venez découvrir une des plus belle région de France.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i><object data="assets/perso/icon1.svg" type="" width="50" height="50"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">Principaux lieux à visiter</h3>
+                                    <div class="content">Au sud de la France, au cœur du Languedoc, l’Hérault compte de nombreux sites remarquables, uniques, façonnés par la nature ou par l’homme, depuis la nuit des temps.
+                                        Nous avons sélectionné pour vous, nos incontournables, les sites qu'il faut absolument aller visiter pendant votre séjour dans l'Hérault !</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i ><object data="assets/perso/icon2.svg" type="" width="50" height="50"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">Séjourner chez nous</h3>
+                                    <div class="content">De l'insolite aux séjours éco-responsables, en passant par des adresses prestige, bien-être... vous allez vous régaler ! 
+                                        Suivez-nous, nous vous avons sélectionné nos meilleures adresses, juste pour vous !</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i ><object data="assets/perso/icon3.svg" type="" width="65" height="65"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">Agenda des évènements</h3>
+                                    <div class="content">L'Hérault, en toute saison, propose des rendez-vous à foison : maritimes ou terrestres, dans des salles de spectacles ou en plein air, intimistes ou festifs...
+
+                                        Nous avons sélectionné pour vous, sur plusieurs volets thématiques, les temps forts à ne pas manquer pour vivre l'Hérault intensément.
+                                        
+                                        Que vous soyez seul, en famille ou entre amis, pas de place à l'ennui !</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i ><object data="assets/perso/icon4.svg" type="" width="45" height="45"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">Mes activités</h3>
+                                    <div class="content">Vous avez envie en un coup d'œil de trouver une idée de loisirs sur l'eau, sur terre, en extérieur, en intérieur, en journée, en soirée...Nous avons sélectionné pour vous nos coups de cœur du moment pour vous accompagner dans la découverte de notre belle destination. 
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i ><object data="assets/perso/icon5.svg" type="" width="50" height="50"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">randonnées</h3>
+                                    <div class="content">Gravir une montagne, marcher le long du littoral méditerranéen ou flâner dans les vignes, ça vous dit ? L’Hérault, c’est une palette de paysages incroyables : moyenne montagne, vignoble, mer, villages pittoresques… 
+
+                                        Pour l’aventure ou juste pour prendre l’air, arpentez les milliers de kilomètres de chemins de randonnée parfaitement balisés et sécurisés !</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="icon-box-1 match-height mb30">
+                                <i ><object data="assets/perso/icon6.svg" type="" width="50" height="50"></object></i>
+                                <div class="content-area">
+                                    <h3 class="title">10 raisons de venir chez nous !</h3>
+                                    <div class="content">Il n'y a que des bonnes raisons pour venir vivre l'Hérault intensément, et je vous les partage volontiers.
+
+                                        Que vous veniez en famille, avec des amis, en amoureux, aucune émotion ne manquera à l'appel. Ici on peut nager, grimper, glisser, voler, goûter, s'émerveiller, se poser, se relaxer, s'évader, se perdre et surtout se retrouver.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="row">
+            <div id="anchor_2" class="col-sm-6 nopadding-lr match-height white-bg" data-mh="promo-inner">
+                <div class="section-inner pad-sides-60 promo-inner">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2 class="mt0">Séjourner</h2>
+                        <p class="lead">Envie d'un hôtel en centre-ville, d'une villa ou d'un camping en bord de mer, d'un gîte dans l'arrière pays, d'une chambre d'hôtes en pleine campagne, d'un domaine au cœur des vignes...
+                            Ou en recherche de farniente au sein d'un village vacances ou d'une résidence de tourisme, de la convivialité d'une auberge de jeunesse, ou de la liberté des vacances en camping-car ou en vanne...
+                            Vous avez le choix du roi dans l'Hérault, à vous de jouer !</p>
+                        <!-- <p>Credibly expedite progressive expertise without enterprise-wide imperatives. Dynamically iterate multimedia based manufactured products for business value. Dynamically iterate client-centered best practices before process-centric solutions.</p> -->
+                        <p class="mt30"><a href="https://www.google.com/travel/hotels?ts=CAESABpSCjQSMDIkMHgxMmIxNjYyNjdlYWIzMWVkOjB4MzA3ODgyMTE2NjUyN2EwOghIw6lyYXVsdBoAEhoSFAoHCOUPEAcYHBIHCOUPEAcYHRgBMgIQACoLCgcoAToDRVVSGgA&ictx=3&rp=SAI&destination=H%C3%A9rault&ap=MABoAA&ved=0CAAQ5JsGahcKEwjY8eKwsrrxAhUAAAAAHQAAAAAQLQ" target="blank_1" class="btn btn-primary btn-white page-scroll">Trouver un hébergement</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 nopadding-lr dark-wrapper remove-opacqued-bg opaqued background-cover match-height" style="background-image: url('assets/perso/hebergement_1.jpeg');" data-mh="promo-inner">
+                <div class="dark-opaqued section-inner pad-sides-60 text-right promo-inner"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 nopadding-lr dark-wrapper remove-opacqued-bg opaqued background-cover match-height" style="background-image: url('assets/perso/restaurant.jpg');" data-mh="promo-inner">
+                <div class="dark-opaqued section-inner pad-sides-60 text-right promo-inner"></div>
+            </div>
+
+            <div  id="anchor_3" class="col-sm-6 nopadding-lr match-height" data-mh="promo-inner">
+                <div class="section-inner pad-sides-60 promo-inner">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2 class="mt0">Bien manger</h2>
+                        <p class="lead">Envie d'un bon restaurant ? Envie de manger en terrasse, les pieds dans le sable, avec une vue panoramique, dans un mas conchylicole, chez un vigneron, chez nos producteurs..., ça vous tente ?
+                            Venez partager avec nous un agréable moment en savourant les spécialités du Languedoc. La cuisine méditerranéenne, les vins du Languedoc et les produits de saison sont au rendez-vous ! 
+                            A vous de choisir...</p>
+                        <!-- <p>Credibly expedite progressive expertise without enterprise-wide imperatives. Dynamically iterate multimedia based manufactured products for business value. Dynamically iterate client-centered best practices before process-centric solutions.</p> -->
+                        <p class="mt30"><a href="https://www.tripadvisor.fr/Restaurants-g2431928-Herault_Occitanie.html" target="blank_2" class="btn btn-primary btn-white page-scroll">Ou manger ?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div  id="anchor_4" class="col-sm-6 nopadding-lr match-height white-bg" data-mh="promo-inner">
+                <div class="section-inner pad-sides-60 promo-inner">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2 class="mt0">Activités</h2>
+                        <p class="lead">Suivez-nous sur terre, sous terre et dans l'air, pour faire le plein de découvertes et partager des moments uniques. 
+
+                            A pied, à vélo, en VTT, à cheval, avec votre baudrier, en trottinette..., partez à la découverte de la nature, de nos espaces préservés ou encore des animaux ! Venez découvrir l'Hérault, notre belle terre d'aventures. 
+                            
+                            Et souvenez-vous, Dame Nature a besoin qu'on prenne soin d'elle et qu'on la respecte...</p>
+                        <!-- <p>Credibly expedite progressive expertise without enterprise-wide imperatives. Dynamically iterate multimedia based manufactured products for business value. Dynamically iterate client-centered best practices before process-centric solutions.</p> -->
+                        <p class="mt30"><a href="https://www.herault-tourisme.com/fr/activites/top-des-meilleures-activites-dans-lherault/" target="blank_3" class="btn btn-primary btn-white page-scroll">Voir toutes les activités</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 nopadding-lr dark-wrapper remove-opacqued-bg opaqued background-cover match-height" style="background-image: url('assets/perso/activites2.jpg');" data-mh="promo-inner">
+                <div class="dark-opaqued section-inner pad-sides-60 text-right promo-inner"></div>
+            </div>
+        </div>
+
+        <section class="dark-wrapper opaqued no-overlay parallax" data-parallax="scroll" data-typsmoothiee="background" data-image-src="assets/perso/herault.jpg" data-speed="0.7">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-3 match-height">
+                            <div class="vertical-center">
+                                <h2 class="section-heading">Pour toute la famille</h2>
+                                <h3 class="section-subheading secondary-font">venez nombreux !</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 match-height">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+                                        <li>
+                                            <div class="row hover-item">
+                                                <div class="col-xs-12">
+                                                    <img src="assets/perso/rando.jpg" class="img-responsive smoothie" alt="">
+                                                </div>
+                                                <div class="col-xs-12 hover-item-caption ">
+                                                    <div class="vertical-center">
+                                                        <h4 class="smoothie"><a href="single-portfolio.html" title="view project">Rando</a></h3>
+                                                        <ul class="smoothie list-inline social-links wow">
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-behance"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row hover-item">
+                                                <div class="col-xs-12">
+                                                    <img src="assets/perso/marche.JPG" class="img-responsive smoothie" alt="">
+                                                </div>
+                                                <div class="col-xs-12 hover-item-caption smoothie">
+                                                    <div class="vertical-center">
+                                                        <h4 class="smoothie"><a href="single-portfolio.html" title="view project">Marché</a></h3>
+                                                        <ul class="smoothie list-inline social-links wow">
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-behance"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row hover-item">
+                                                <div class="col-xs-12">
+                                                    <img src="assets/perso/canyoning.jpg" class="img-responsive smoothie" alt="">
+                                                </div>
+                                                <div class="col-xs-12 hover-item-caption smoothie">
+                                                    <div class="vertical-center">
+                                                        <h4 class="smoothie"><a href="single-portfolio.html" title="view project">Canyoning</a></h3>
+                                                        <ul class="smoothie list-inline social-links wow">
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-behance"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row hover-item">
+                                                <div class="col-xs-12">
+                                                    <img src="assets/perso/viaferrata.jpg" class="img-responsive smoothie" alt="">
+                                                </div>
+                                                <div class="col-xs-12 hover-item-caption smoothie">
+                                                    <div class="vertical-center">
+                                                        <h4 class="smoothie"><a href="single-portfolio.html" title="view project">via <br> ferrata</a></h3>
+                                                        <ul class="smoothie list-inline social-links wow">
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-behance"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row hover-item">
+                                                <div class="col-xs-12">
+                                                    <img src="assets/perso/oenotour.jpg" class="img-responsive smoothie" alt="">
+                                                </div>
+                                                <div class="col-xs-12 hover-item-caption smoothie">
+                                                    <div class="vertical-center">
+                                                        <h4 class="smoothie"><a href="single-portfolio.html" title="view project">oenotour</a></h3>
+                                                        <ul class="smoothie list-inline social-links wow">
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-behance"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div  id="anchor_5" class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb100 wow">
+                            <h2 class="section-heading">Inspiration...</h2>
+                            <h3 class="section-subheading secondary-font">Nos incontournables en images !</h3>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <ul class="portfolio-filter mb30 list-inline wow">
+                                <li><a class="btn btn-primary active" href="#" data-filter="*">tous</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".nature">nature</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".edifice">Patrimoine</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".musée">Musées</a></li>
+                                <li><a class="btn btn-primary" href="#" data-filter=".village">Villes et villages</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12">
+                        <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr nature isotope-item">
+                                <div class="hover-item">
+                                        <img src="assets/perso/landing_1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow img-responsive smoothie">
+                                      </div>
+                                      <div class="column none">
+                                        <img src="assets/perso/landing_2b.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                                      </div>
+                                      <div class="column none">
+                                        <img src="assets/perso/landing_3b.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                                      </div>
+                                      <div class="column none">
+                                        <img src="assets/perso/landing_4b.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                                      </div>
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie"></div>
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Parc naturel régional du Haut Languedoc</a></h3>
+                                                
+                                              <!-- The Modal/Lightbox -->
+                                                <div id="myModal" class="modal">
+                                                <span class="close cursor" onclick="closeModal()">&times;</span>
+                                                <div class="modal-content">
+
+                                                <div class="mySlides">
+                                                <div class="numbertext">1 / 4</div>
+                                                <img src="assets/perso/landing_1.jpg" style="width:100%; z-index: 1500;">
+                                                </div>
+
+                                                <div class="mySlides">
+                                                <div class="numbertext">2 / 4</div>
+                                                <img src="assets/perso/landing_2.jpg" style="width:100%; z-index: 1500;">
+                                                </div>
+
+                                                <div class="mySlides">
+                                                <div class="numbertext">3 / 4</div>
+                                                <img src="assets/perso/landing_3.jpg" style="width:100%; z-index: 1500;">
+                                                </div>
+
+                                                <div class="mySlides">
+                                                <div class="numbertext">4 / 4</div>
+                                                <img src="assets/perso/landing_4.jpg" style="width:100%; z-index: 1500;">
+                                                </div>
+
+                                                <!-- Next/previous controls -->
+                                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                                <!-- Caption text -->
+                                                <div class="caption-container">
+                                                <p id="caption"></p>
+                                                </div>
+
+                                                <!-- Thumbnail image controls -->
+                                                <div class="column">
+                                                <img class="demo" src="assets/perso/landing_1b.jpg" onclick="currentSlide(1)" alt="Nature">
+                                                </div>
+
+                                                <div class="column">
+                                                <img class="demo" src="assets/perso/landing_2b.jpg" onclick="currentSlide(2)" alt="Snow">
+                                                </div>
+
+                                                <div class="column">
+                                                <img class="demo" src="assets/perso/landing_3b.jpg" onclick="currentSlide(3)" alt="Mountains">
+                                                </div>
+
+                                                <div class="column">
+                                                <img class="demo" src="assets/perso/landing_4b.jpg" onclick="currentSlide(4)" alt="Lights">
+                                                </div>
+                                                </div>
+                                                </div>
+                                        </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr musée isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/musee.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Musée Fabre</a></h3>
+                                            <a href="assets/perso/musee.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr nature isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/cascade.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">La cascade de la Vis</a></h3>
+                                            <a href="assets/perso/cascade.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr nature isotope-item hover-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/saint loup2.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-carousel.html" title="view project">Le pic Saint Loup</a></h3>
+                                            <a href="assets/perso/saint loup2.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-carousel.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr edifice isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/saint fulcran2.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">La Cathédrale de Saint Fulcran</a></h3>
+                                            <a href="assets/perso/saint fulcran2.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr edifice isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/maguelone2.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">La Cathédrale de Maguelone</a></h3>
+                                            <a href="assets/perso/maguelone2.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr nature isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/oppidum.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">L'Oppidum d'Ensérune</a></h3>
+                                            <a href="assets/perso/oppidum.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr village isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/minerve.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="assets/perso/minerve.jpg" title="view project">La cité de Minerve</a></h3>
+                                            <a href="assets/perso/minerve.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4 col-xs-12 portfolio-item nopadding-lr nature isotope-item">
+                                <div class="hover-item displayed">
+                                    <img src="assets/perso/etang.jpg" class="img-responsive smoothie" alt="">
+                                    <div class="overlay-item-caption smoothie"></div>
+                                    <div class="hover-item-caption smoothie">
+                                        <div class="vertical-center smoothie">
+                                            <h3 class="smoothie mb30"><a href="assets/perso/etang.jpg" title="view project">L'étang de Thau</a></h3>
+                                            <a href="assets/perso/etang.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Voir</a>
+                                            <!-- <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="anchor_6" ></div>
+        <section id="reloadBGPic" class="dark-wrapper opaqued no-overlay parallax" data-parallax="scroll" data-speed="0.7" data-image-src="assets/perso/herault.jpg" >
+            <div id="contact-tabs" role="tabpanel">
+
+            <!-- Nav tabs -->
+                <ul class="nav nav-justified icon-tabs" id="nav-tabs" role="tablist">
+                    <li role="presentation" class="ptb smoothie">
+                        <a class="blackBG" id="link" href="#contact1" aria-controls="contact1" role="tab" data-toggle="tab" onclick="loadDiv_1()">
+                            <span class="tabtitle heading-font smoothie text-right blackBG" >contactez nous</span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="ptb smoothie active">
+                        <a class=" blackBG" href="#contact2" aria-controls="contact2" role="tab" data-toggle="tab" onclick="loadDiv_2()">
+                            <span class="tabtitle heading-font smoothie text-left blackBG" >Voir la carte</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+               <div class="tab-content" id="tabs-collapse">
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane active" id="contact2">
+                        <iframe id="mapwrapper" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d739785.9097395964!2d2.8066159594198186!3d43.59011716969569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b166267eab31ed%3A0x3078821166527a0!2zSMOpcmF1bHQ!5e0!3m2!1sfr!2sfr!4v1624714706619!5m2!1sfr!2sfr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" title="googleMap"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="opaqued light-opaqued parallax">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
+                                <li>
+                                    <img src="assets/perso/partnerLogo1bis.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li id="li">
+                                    <img src="assets/perso/partnerLogo2.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo3.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo4.png" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo5.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo6.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo7.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo8.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo9.jpg" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/perso/partnerLogo10.jpg" class="img-responsive" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer-wrapper" class="dark-footer-image-bg">
+            <section class="dark-wrapper">
+                <div class="section-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="widget about-us-widget">
+                                    <h4 class="widget-title"><strong>Notre</strong> Mission</h4>
+                                    <p>Vous retrouverez ici toutes les informations utiles pour préparer vos vacances et vos activités dans l'Hérault.Contactez nous pour trouver toutes les bonnes adresses, les astuces, et les bons plans où que vous prévoyiez de séjourner !</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <h4 class="widget-title"><strong>Derniers</strong> Articles</h4>
+                                    <div>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="media-heading"><a href="#">Tout sur le cirque de mourèze</a></span>
+                                                <small class="muted">Posté le 14 Avril 2015</small>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="media-heading"><a href="#">A faire sur Montpellier</fieldset></a></span>
+                                                <small class="muted">Posté le 14 Avril 2015</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <h4 class="widget-title">Mots-clés populaires</h4>
+                                    <div class="tagcloud">
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">randonnées</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Site touristique</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Famille</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Hérault</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Hébergement</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">à faire</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">à visiter</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Ou manger</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Détente</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">évenements</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Agenda</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">tourisme</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="white-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <ul class="list-inline social-links wow">
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-behance"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 text-right">
+                            <span class="copyright">Copyright 2021. Designed by Anthony BAYLE</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <div class="flexpanel">
+        <div class="viewport-wrap">
+            <div class="viewport">
+                <div class="widget mb50">
+                    <h4 class="widget-title">Derniers Articles</h4>
+                    <div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Les Bords de l'Hérault</a></span>
+                                <small class="muted">posté le 14 Avril 2015</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Montpellier et alentours</a></span>
+                                <small class="muted">Posté le 14 Avril 2015</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Les meilleures randos</a></span>
+                                <small class="muted">Posté le 14 Avril 2015</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">ou aller en famille</a></span>
+                                <small class="muted">Posté le 14 Avril 2015</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Les plus beaux villages en Hérault</a></span>
+                                <small class="muted">Posté le 14 Avril 2015</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget mb50">
+                    <h4 class="widget-title"><strong>Articles par </strong> mots-clés</h4>
+                    <div class="tagcloud">
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">randonnées</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Site touristique</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Famille</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Hérault</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Hébergement</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">à faire</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">à visiter</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Ou manger</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Détente</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">évenements</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Agenda</a>
+                        <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">tourisme</a>
+                    </div>
+                </div>
+                <div class="widget about-us-widget mb50">
+                    <h4 class="widget-title">A propos du site</h4>
+                    <p>Le contenu de ce site est créé, géré et actualisé par Hérault Tourisme, Agence de Développement Touristique du Département de l'Hérault.
+                        Vous y accédez par l'adresse suivante : https://www.herault-tourisme.com/</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+    <script src="assets/js/init.js"></script>
+    <script src="assets/js/perso.js"></script>
+    <!-- <script src="assets/lightbox2-2.11.3/dist/js/lightbox.js"></script> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        'use strict';
+        jQuery('#headerwrap').backstretch([
+            "assets/perso/landing_1.jpg",
+            "assets/perso/landing_2.jpg",
+            "assets/perso/landing_3.jpg",
+            "assets/perso/landing_4.jpg"
+        ], {
+            duration: 4000,
+            fade: 1000
+        });
+    });
+    </script>
+
+</body>
+
+</html>
