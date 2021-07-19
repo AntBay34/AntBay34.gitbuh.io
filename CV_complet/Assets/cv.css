@@ -169,6 +169,7 @@ input[title] {
 }
 
 .contacts {
+  justify-content: space-around;
   height: 10%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -194,8 +195,8 @@ input[title] {
   width: 20px;
   height: 20px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 33%;
-          flex: 0 0 33%;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
   text-align: left;
 }
 
@@ -209,8 +210,8 @@ input[title] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 33%;
-          flex: 0 0 33%;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -368,7 +369,7 @@ input[title] {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 40%;
           flex: 0 0 40%;
-  height: 30%;
+  height: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -397,8 +398,8 @@ input[title] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
