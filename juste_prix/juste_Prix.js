@@ -63,7 +63,7 @@ function game() {
             document.querySelector(".result").innerHTML="C'est carrément moins !";
            }
            else if (difference>50) {
-            document.querySelector(".result").innerHTML="tu crois que c'est si cher sans déconner ?!";
+            document.querySelector(".result").innerHTML="croyez vous vraiment ça si cher ?!";
            }
             else if ((0>difference) && (difference>=-10)) {
             document.querySelector(".result").innerHTML="C'est un tout petit peu plus !";
@@ -78,7 +78,7 @@ function game() {
             document.querySelector(".result").innerHTML="C'est carrément plus !";
            }
            else {
-            document.querySelector(".result").innerHTML="tu crois qu'on va te le donner aussi non ?!";
+            document.querySelector(".result").innerHTML="non, ça ne peut décemment pas être aussi abordable !";
            }
         }
     }
@@ -94,7 +94,7 @@ function game() {
 
         else if (nbUserAlreadyTested.includes(attempt)) {
 
-            document.querySelector(".result_2").innerHTML="mais tu l'a déja essayé alors on le compte pas !";
+            document.querySelector(".result_2").innerHTML="déjà essayé !";
         }
         else {
         /*document.querySelector(".attempt").innerHTML=attempt;*/
