@@ -1,0 +1,235 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  font-size: 20px;
+  background-color: #0AD;
+  /*Bleu*/
+  border: 2px solid blue;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px 0px;
+  height: 1200px;
+  overflow: hidden;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.bloc1 {
+  border-radius: 5px;
+  width: 85%;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  background: black;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.71222) 0%, #d40e83 35%, #0d0afb 100%);
+  padding: 10px 0px;
+  text-align: center;
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+}
+
+.idPlayerField {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  background-color: transparent;
+  padding: 10px 0px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+}
+
+#idPlayerField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background-color: transparent;
+  padding: 10px 0px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+}
+
+#game {
+  display: none;
+}
+
+.E1, .E2, .title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0px;
+  text-align: center;
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+}
+
+#afterCarDiv {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0px;
+  text-align: center;
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px;
+}
+
+/* essaye de redimmennsionnez le caption */
+div > .carousel-caption {
+  position: relative;
+  left: 0%;
+}
+
+div > .carousel-indicators {
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.userAttemptDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*align-content: space-between;*/
+}
+
+.listOfAttempts {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  /*justify-content: flex-start;*/
+}
+
+.messToUser {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  /*justify-content: flex-end;*/
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.tryAgainButton {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logoCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo {
+  width: auto;
+  border-radius: 45px;
+  border: 5px solid black;
+}
+
+.divLogo {
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto 20px auto;
+  margin-top: 20px;
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0) translateX(0px);
+            transform: rotate(0) translateX(0px);
+  }
+  33% {
+    -webkit-transform: rotate(5deg) translateX(0px);
+            transform: rotate(5deg) translateX(0px);
+  }
+  66% {
+    -webkit-transform: rotate(-5deg) translateX(0px);
+            transform: rotate(-5deg) translateX(0px);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translateX(0px);
+            transform: rotate(0deg) translateX(0px);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0) translateX(0px);
+            transform: rotate(0) translateX(0px);
+  }
+  33% {
+    -webkit-transform: rotate(5deg) translateX(0px);
+            transform: rotate(5deg) translateX(0px);
+  }
+  66% {
+    -webkit-transform: rotate(-5deg) translateX(0px);
+            transform: rotate(-5deg) translateX(0px);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translateX(0px);
+            transform: rotate(0deg) translateX(0px);
+  }
+}
+/*# sourceMappingURL=juste_Prix.css.map */

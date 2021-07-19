@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="juste_Prix.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="bloc1">
+            <div class="logoCont">
+                <div class="divLogo"><img class="logo" src="src/logo_JP2.jfif" alt=""></div>
+            </div>
+            <div  id="idPlayerField" class="idPlayerField">
+                <div>
+					<label for="name_player_1">Nom joueur 1 :</label>
+					<input type="text" name="name_player_1" id="name_player_1">
+				</div>
+                <div>
+					<input type="button" value="Jouer" id="bt_play">
+				</div>
+            </div>
+            <div id="game" class="game">
+                <div id="carousel" class="carousel slide" data-interval="false">
+                    <ol class="carousel-indicators">
+                    <li data-target=".carousel" data-slide-to="0" class="active"></li>
+                    <li data-target=".carousel" data-slide-to="1"></li>
+                    <li data-target=".carousel" data-slide-to="2"></li>
+                    <li data-target=".carousel" data-slide-to="3"></li>
+                    <li data-target=".carousel" data-slide-to="4"></li>
+                    <li data-target=".carousel" data-slide-to="5"></li>
+                    <li data-target=".carousel" data-slide-to="6"></li>
+                    <li data-target=".carousel" data-slide-to="7"></li>
+                    <li data-target=".carousel" data-slide-to="8"></li>
+                    <li data-target=".carousel" data-slide-to="9"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active" id="10">
+                        <img class="" src="src/10.20.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Ecouteurs bluethoot</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="32">
+                        <img class="" src="src/32.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Casque VR pour portable</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="57">
+                        <img class="" src="src/57.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Stabilisateur pour portable</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="69">
+                        <img class="" src="src/69.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Montre connectée</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="7">
+                        <img class="" src="src/7.50.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Micro-sd Sandisk 64go</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="79">
+                        <img class="79" src="src/79.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>liseuse Kindle</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="85">
+                        <img class="85" src="src/85.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Videoprojecteur de poche</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="86">
+                        <img class="86" src="src/86.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Barre de son</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="95">
+                        <img class="95" src="src/95.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Ecran 17"</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="99">
+                        <img class="99" src="src/99.jpg" alt="">
+                        <div class="carousel-caption">
+                        <h1>Souris sans fil Logitech</h1>
+                        </div>
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </a> 
+                    <!--<p class="attempt"></p>
+                    <p class="count"></p>-->
+                </div>
+                <div id="afterCarDiv">
+                    <div class="listOfAttempts">
+                        <p>Les Nombres déjà testés : <br></p>
+                        <p class="tab"></p>
+                    </div>
+                    <div class="userAttemptDiv">
+                        <div>
+                            <label for="Prix">Quel prix selon vous ?</label>
+                            <input type="number" name="userTest" id="essaiPrix"> <!-- (C2) onkeypress="verifierCaracteres(event); return false;"-->
+                        </div>
+                        <div>
+                            <input type="button" value="essayer" id="userEnter">
+                        </div>
+                    </div>
+                    <div class="messToUser">
+                        <p class="result"></p>
+                        <p class="result_2"></p>
+                    </div>
+                    <div>
+                        <!--<a href="#null" onclick="javascript:openWindow();">Ouverture popup basique</a>-->
+                    </div>
+
+                </div>
+                <div class="tryAgainButton">
+                    <input type="button" value="Réessayer ?" id="tryAgain">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="juste_Prix.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

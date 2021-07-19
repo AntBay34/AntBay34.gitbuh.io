@@ -1,0 +1,213 @@
+#container_principal    {
+    border: solid 1px darkgreen;
+    padding: 3px;
+}
+/* Je crée 2 conteneur imbriqué pour avoir la double bordure autour
+de ma page avec des epaisseurs differentes */
+#container_secondaire   {
+    border: solid 5px darkgreen;
+    padding: 3px;
+}
+.img_Bandeau    {
+    width: 100%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+/* Je modifie les parametres de mes lignes de separation afin de modifier leur taille */
+.separation_Line    {
+    border-radius: 15px;
+    background-color: darkgreen;
+    color: darkgreen;
+    border: 0 none;
+    height: 10px;
+}
+.bloc_Infos {
+    width: 100%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    max-width: 100%;
+    height: 260px;
+}
+#row_Alignement {
+    margin-top: 10px;
+}
+#champ  {
+    margin-top: 10px;
+    border-radius: 30px;
+    border-color: darkgreen;
+}
+.fieldLine  {
+    justify-content: space-around;
+}
+h4  {
+    text-align: center;
+}
+#mainLineForm   {
+    height: 5px;
+    margin : 5px 5px;
+}
+/* Je ne trouve que cette solution pour aligner mon dernier champ avec ceux du haut */
+.beforelastField  {
+    margin-left:4.2%;
+}
+/* J'aligne également mon bouton avec les champs du haut */
+.lastField{
+    margin-right: 4.2%;
+    margin-top: 25px;
+}
+#contactElements_1    {
+    height: 10%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-right: 0;
+}
+#contactElements_2    {
+    height: 28%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-right: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#contactElements_3    {
+    height:59%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-right: 0;
+}
+#elements_Bloc_2 {
+    margin-bottom: 0px;
+    height: max-content;
+    max-width: max-content;
+    width: 100%;
+    height: 100%;
+}
+.styleElementsContacts  {
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+}
+.textFooter    {
+    align-self: center;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    width: 20%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    /* le display sert à centrer mon paragraphe verticalement car il est contenu
+    dans une "row" et je ne peut appliquer un centrage sur le conteneur secondaire
+    sous peine de centrer tous mes éléments */
+    display: table-cell;
+    vertical-align: middle;
+}
+.footer  {
+    /* display cellule en commun avec la table plus haut */
+display: table;
+width: 100%;
+}
+.pos_Abs {
+    margin-top: 130px;
+    margin-left: 10px;
+    background-color: white;
+    
+}
+.pos_Abs_2  {
+    z-index: 2;
+    height: 30px;
+    width: 30px;
+}
+.iframe {
+    z-index:1;
+}
+.centreDeNice   {
+    height: 350px;
+    margin-bottom: 35px;
+}
+.adresseHorairesNice {
+    width: 100%;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    height: 100%;
+    background-color:green;
+    text-decoration-color: white;
+    padding: 5px 10px;
+}
+.whiteTextMedium {
+    color: white;
+    font-size: medium;
+}
+.whiteTextSmall {
+    color: white;
+    font-size: small;
+    margin-bottom: 0px;
+}
+.lineSupHoraires    {
+    background-color: white;
+    width: 30%;
+    margin-inline-start: 0px;
+}
+.logo_3936  {
+    width: 50%;
+}
+.boldText   {
+    font-weight: bold;
+}
+.blueIcons   {
+    margin-left: 5px;
+}
+.withinMarginBottom {
+    margin-bottom: 0px;
+}
+.blueLine    {
+    background-color:steelblue;
+    width: 30%;
+    margin-inline-start: 0px;
+    margin: 5px;
+}
+.blueBoldText   {
+    font-weight: bold;
+    color: steelblue;
+    margin-bottom: 0px;
+}
+.smallText  {
+    font-size:smaller;
+}
+#lightPaddingLeft   {
+    padding-left: 5px;
+}
+.photoContact   {
+    width: 100%;
+    height: 200px;
+    border: solid 3px darkgreen;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+.parent {
+    display: table;
+    height: 260px;
+}
+.child {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.child2 {
+    top: 100px;
+    left: 160px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    text-decoration: underline;
+    opacity: 0;
+}
+.celTitle   {
+    color: darkgreen;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
+.leftTitle   {
+    text-align: left;
+    
+}

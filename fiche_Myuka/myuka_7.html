@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body    {
+            background-color : #fcfcbf;
+        }
+        .logo   {
+            border: 10px double black;
+            width: auto;
+            background-color: rgb(2, 177, 10);
+            color: rgb(245, 241, 0);
+            font-size: 120px;
+            text-align: center;
+            text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+        }
+        .menu   {
+            background-color: white;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 10px 10px 10px;
+            height: 20px;
+            width:auto;
+        }
+        .header    { 
+            border-collapse: separate;
+            border-spacing: 10px 0px;
+            width: 100%;
+        }
+        .ligne  {
+            background-color: #FFD500;
+            border: 1px solid #FFD500;
+            border-radius:20px 20px 20px 20px;   
+        }
+        .champ  {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 10px 10px 10px;
+            height: 20px;
+            width:200px;
+        }
+        .bouton {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px 5px 5px 5px;
+            height: 20px;
+            width: 120px;   
+        }
+        .formulaire {
+            background-color: white;
+            border: 2px solid black;
+            border-collapse: separate;
+            border-spacing: 20px 20px;
+            border-radius: 5px 5px 5px 5px;
+            width: 100%;
+        }
+        .logos_verts    {
+            width:30%;
+            margin: -120px 0px 0px 0px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0;
+            margin: -70px 0px 0px 100px;
+        }
+        .exemple-flex-flow-col { 
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-flow : column; 
+            border-color:#000000; 
+            height : 450px; 
+            flex-wrap: wrap;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0;
+        }
+        .exemple-flex-container { 
+            display : flex; 
+            align-content:space-between;
+            /*border-width:1px; 
+            border-style:solid; */
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0;
+          
+            
+        }
+        .frosties   {
+            display: flex;
+            background-color: white;
+            width: 48%;
+            height: 135%;
+            border: 2px solid;
+            border-color: black;
+            border-radius: 5px;
+            justify-content: center;
+            flex-grow: 0;
+            
+        }
+        .exemple-flex-item { 
+            width: 46%;
+            text-align: justify;
+            margin: 0px 0px 0px 0px;
+        
+            background-color: white;
+            border:2px solid rgb(0, 0, 0); 
+            border-radius: 5px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0;
+            padding: 20px 20px 80px 20px;
+        }
+        .exemple-flex-item_2{ 
+            background-color: white;
+            border:2px solid rgb(0, 0, 0); 
+            border-radius: 5px;
+            height: 65%;
+            width:48%; 
+            margin: 160px 0px 0px 0px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0;
+        }
+        .exemple-flex-item_3{ 
+            background-color: white;
+            border:2px solid rgb(0, 0, 0); 
+            border-radius: 5px;
+            height: 161%;
+            width:48.65%; 
+            margin-top: -275px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0; 
+        }   
+        .parametres_header_infos {
+            align-content:flex-start;
+            display : flex; 
+            border-style:solid;
+            margin: 10px 0px 0px 0px; 
+        }
+        .header_infos { 
+            background-color: white;
+            border-width: 2px;
+            border-radius: 5px;
+            flex-flow :column; 
+            border-color:#000000; 
+            height : 105px; 
+            flex-wrap: wrap;
+            
+        }
+        .items_header_infos { 
+            background-color: white;
+            border:2px solid gray; 
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0 
+        }
+        
+        .text_header_1  {
+            font-size: 20px;
+            width: 35%;
+            height: 63%;  
+            flex: 1 1 10%;
+        }
+        .text_header_2  {
+            width: 30%;
+            height: 15%;
+            
+        }
+        .text_header_3  {
+            width: 15%;
+            height: 15%;
+            /*margin-left: 15em;
+            margin-top: -45px;*/
+        }
+        #ean  {
+            align-items: flex-end;
+        }
+        .EAN    {
+            padding-top: 10px;
+            align-content: space-around;
+            height: 90%;
+            /*margin-left: 190px;
+            margin-top: -95px;*/
+        }
+        .ligne  {
+            grid-area:1/1/-1/-1;
+        }
+        .image  {
+            height: 98%;
+            width: 90%;
+            align-self:center;
+        }
+        .parametres_footer { 
+            display : flex; 
+            border-style:solid;
+            margin: 25px 0px 5px 0px; 
+        }
+        .container_footer { 
+            
+            background-color: white;
+            border-width: 2px;
+            flex-flow :nowrap; 
+            border-color:#000000; 
+            height : 130px; 
+            min-width:650px; 
+            flex-wrap: wrap;
+            border-radius: 5px;
+            justify-content:left;
+        }
+        .section_1   {
+            font-weight: bold;
+            min-width: 10%;
+            max-width: 24%;
+            background-color: white;
+            padding: 10px 10px 10px 10px;
+            margin: 5px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0 
+        }
+        .section_2   {
+            text-decoration: underline;
+            min-width: 10%;
+            max-width: 24%;
+            background-color: white;
+            padding: 10px 10px 10px 10px;
+            margin: 5px;
+            margin-top: -10px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0 
+        }
+        .carroussel { 
+            background-color: white;
+            border-width: 2px;
+            border-radius: 5px;
+            flex-flow :nowrap; 
+            border-color:#000000; 
+            height :215px; 
+            
+            flex-wrap:nowrap;
+            overflow: scroll;
+            
+        }
+        .parametres_carroussel { 
+            display : flex; 
+            border-style:solid;
+            margin: 0px 0px 0px 0px; 
+            margin-top:10px;
+
+        }
+        .items_carroussel { 
+            align-self: center;
+            height:90%;
+            background-color: white;
+            border:2px solid gray; 
+            border-radius: 10px;
+            margin: 5px;
+            /* Empêche tout redimensionnement */
+            flex-shrink : 0; flex-grow : 0 
+        }
+    </style> 
+</head>
+<body>
+    <!--<center> si je veux centrer mon tableau-->
+    <table>
+        <thead>
+            <th class="logo"> MYUKA </th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <table class="header">
+        <thead>
+            <hr size="25px" width="100%" class="ligne" noshade="">
+        </thead>
+        <tbody>
+            <tr>
+                <td class="menu">Menu 1</td>
+                <td class="menu">Menu 2</td>
+                <td class="menu">Menu 3</td>
+                <td class="menu">Menu 4</td>
+                <td class="menu">Menu 5</td>
+                <td class="menu">Menu 6</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            
+        </tfoot>
+    </table>
+    <hr size="25px" width="100%" class="ligne" noshade="">
+    <!--</center>-->
+    <table class="formulaire" cellspacing ="100">
+        <tbody>
+            <tr>
+                <td class="champ">Identifiant</td>
+                <td class="champ">Mot de passe</td>
+                <td></td>
+                <td></td>
+                <td class="bouton">Connexion</td>
+            </tr>
+                
+        </tbody>
+    </table>
+
+    <div class="header_infos parametres_header_infos">
+        <p class="items_header_infos text_header_1"><strong>Frosties - Kellog's - 600 g</strong></p>
+        <p class="items_header_infos text_header_2">Code barre : 5050083499616 (EAN / EAN-13)></p>
+        <p class="items_header_infos text_header_3">Marque Kellogg's></p>
+        <img class="EAN" id="ean" src="src/barcode.gif" alt="code barre de l'article">
+    </div>
+
+    <div class="exemple-flex-container exemple-flex-flow-col">
+        <a class="frosties" href=photoProduit.html target="_blank">
+            <img class="image" src="src/Frosties.jpg">
+        </a>
+        <p class="exemple-flex-item" >=> Les Ingrédients sont listés par ordre d'importance
+        Liste des ingrédients :
+        Maïs, sucre, arôme de malt d'orge, sirop de glucose, sel, Vitamines et minéraux : carbonate de calcium, vitamines (B3/PP, B6, B2, B1, B9, D, B12), fer.
+        Substances ou produits provoquant des allergies ou intolérances : Gluten
+        Analyse des ingrédients :
+        </p>
+        <img class="logos_verts" src="src/logos_verts.png">
+    </div>
+
+    <div class="exemple-flex-container exemple-flex-flow-col">
+        <img class="exemple-flex-item_2" src="src/Infos_Frosties.jpg">
+        <img class="exemple-flex-item_3" src="src/Frosties_Valeurs_nut.jpg">
+    
+    </div>
+    <div class="carroussel parametres_carroussel">
+        <img class="items_carroussel" src="src/cer_1.jpg">
+        <img class="items_carroussel" src="src/cer_2.jpg">
+        <img class="items_carroussel" src="src/cer_3_bis.jpg">
+        <img class="items_carroussel" src="src/cer_4.jpg">
+        <img class="items_carroussel" src="src/cer_5.jpg">
+        <img class="items_carroussel" src="src/cer_6.jpg">
+        <img class="items_carroussel" src="src/cer_7.jpg">
+        <img class="items_carroussel" src="src/cer_8.jpg">
+    </div>
+    <div class="container_footer parametres_footer">
+        <p class="section_1">Entreprises</p>
+        <p class="section_1">Ressources</p>
+        <p class="section_1">Assistance</p>
+        <p class="section_1">Developpeurs</p>
+        <p class="section_1">Déclaration de confidentialité du site © 2020 2021 All rights reserved </p>
+        <p class="section_1">Cookies</p>
+        <p class="section_1">Mentions légales</p>
+        <p class="section_2">Blog <br> Contacts</p>
+        <p class="section_2">Confidentalité <br> Normes</p>
+        <p class="section_2">Déposer un Bug</p>
+        <p class="section_2">Beta <br> Outils</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,480 @@
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
+#page_CV {
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  line-height: 1;
+  font-weight: 100;
+}
+
+.contGen {
+  background: #002244;
+  width: 210mm;
+  min-height: 297mm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid #002D62;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.leftCol {
+  font-size: small;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  color: white;
+  background: #002244;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  width: 30%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mainBody {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(#FFFFFFba, rg), color-stop(241), color-stop(255), color-stop(0%, 0.71222), color-stop(35%, #629cb9), to(#c6ceff));
+  background: linear-gradient(90deg, rg #FFFFFFba 222, 241, 255, 0.71222 0%, #629cb9 35%, #c6ceff 100%);
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+  width: 25%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.photoDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  padding: 15px 5px 10px 5px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.photo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid black;
+  width: 162px;
+  height: 222px;
+}
+
+.logos {
+  padding-top: 15px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: none;
+}
+
+p {
+  padding: 10px 25px;
+}
+
+h3, h1, h2.name, h4 {
+  margin-left: 20px;
+}
+
+h2.name, .mainTitle {
+  margin-bottom: 0px;
+}
+h1 {
+  margin-top: 30px
+}
+
+ul {
+  padding-right: 20px;
+}
+
+li h1 {
+  margin-bottom: 7px;
+}
+
+.mainP {
+  margin: 0px 5px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+
+h4 {
+  margin: 0px 30px;
+}
+
+hr {
+  margin-top: 3px;
+  margin-bottom: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+#forCopy {
+  display: none;
+}
+
+input[data-bs-toggle] {
+  color: black;
+}
+
+input[title] {
+  color: white;
+}
+
+.contacts {
+  height: 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  border-radius: 5px;
+  margin: 10px 25px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.logoContacts {
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+  text-align: left;
+}
+
+.infosContacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icons {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 26%;
+          flex: 0 0 26%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+.hobbiesIcons {
+  display: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.idCard {
+  font-size: small;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  color: white;
+  background: #002244;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  width: 100%;
+  height: 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.photoCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  text-align: left;
+}
+
+.infosCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  text-align: left;
+}
+
+.divContGenTest {
+  max-width: 579px;
+  display: none;
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; */
+  border: 2px solid #002D62;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.photoTest {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid black;
+  width: 218px;
+  height: 299px;
+}
+
+.divTest {
+  font-size: small;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  color: white;
+  background: #002244;
+  -ms-flex-preferred-size: 0 0 25%;
+      flex-basis: 0 0 25%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 5px;
+}
+
+.photoDivTest {
+  height: 55%;
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  padding: 10px 5px 5px 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.contactsDivTest {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  height: 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  border-radius: 5px;
+  margin: 10px 15px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.infosContactsTest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.centIntTest {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  height: 35%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  border-radius: 5px;
+  margin: 5px 5px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.infosCardTest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  text-align: left;
+}
+/*# sourceMappingURL=cv.css.map */
+h3.sameTitle1 {
+  margin-bottom:2px;
+}
+h3.sameTitle2 {
+  margin-top:2px;
+}
+
+@media (min-width: 576px ) {
+  @media(max-width: 900px) {
+    .logos {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .contacts {
+      display: none;
+    }
+    .photoDiv {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 5%;
+              flex: 0 0 5%;
+    }
+    .hobbiesIcons {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .hobbiesList {
+      display: none;
+    }
+  }
+}
