@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}Profil{% endblock %}
+{% block body %}
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span> </span></div>
+        </div>
+        <div class="col-md-7 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Modifier le mot de passe de {{ app.user.firstname }} {{ app.user.name }}</h4>
+                </div>
+                <div class="row mt-2">
+                <form method="post">
+                    <div class="form-field">
+                        <label for="pass">Mot de passe :</label>
+                        <input type="password" id="pass" name="pass" class="form-control">
+                    </div>
+                    <div class="form-field">
+                        <label for="pass2">Confirmer le mot de passe :</label>
+                        <input type="password" id="pass2" name="pass2" class="form-control">
+                    </div>
+                    <button class="btn blue">Valider</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

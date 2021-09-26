@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bieres{% endblock %}
+
+{% block body %}
+    <h1>Edit Bieres</h1>
+
+    {{ include('exit/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('exit_index') }}">back to list</a>
+
+    {{ include('exit/_delete_form.html.twig') }}
+{% endblock %}

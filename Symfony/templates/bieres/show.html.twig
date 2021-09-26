@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bieres{% endblock %}
+
+{% block body %}
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">{% if app.request.attributes.get('_route') == 'bieres_show' %}
+                    {# <h2>Images</h2> #}
+                    {% for image in biere.images %}
+                        <div>
+                            <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="300">
+                        </div>
+                    {% endfor %}
+                {% endif %}</div>
+        </div>
+        <div class="col-md-7 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                        {# <h1>Créer une nouvelle référence</h1> #}
+                </div>
+    <h1>{{ biere.LibelleBiere }}</h1>
+
+    <table class="table">
+        <tbody>
+            {# <tr>
+                <th>Id</th>
+                <td>{{ biere.id }}</td>
+            </tr> #}
+            {# <tr>
+                <th>Libelle_Biere</th>
+                <td>{{ biere.libelleBiere }}</td>
+            </tr> #}
+            <tr>
+                <th>Marque :</th>
+                <td>{{ biere.marqueBiere }}</td>
+            </tr>
+            <tr>
+                <th>Degré d'alcool :</th>
+                <td>{{ biere.titreAlcoolBiere }}</td>
+            </tr>
+            <tr>
+            {% if biere.contenanceBiere is not null and biere.contenanceBiere is not empty %}
+                <th>Contenance :</th>
+                <td>{{ biere.contenanceBiere }}</td>
+            {% endif %}
+            </tr>
+            {# <tr>
+                <th>PrixAchat_Biere</th>
+                <td>{{ biere.prixAchatBiere }}</td>
+            </tr>
+            <tr>
+                <th>PrixVente_Biere</th>
+                <td>{{ biere.prixVenteBiere }}</td>
+            </tr> #}
+            <tr>
+                <th>Prix :</th>
+                <td>{{ biere.prixTTCBiere }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie :</th>
+                <td>{{ biere.type1Biere }}</td>
+            </tr>
+            <tr>
+                {% if biere.type2Biere is not null and biere.type2Biere is not empty %}
+                <th>Type :</th>
+                <td>{{ biere.type2Biere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if biere.type3Biere is not null and biere.type3Biere is not empty %}
+                <th>Type spécifique :</th>
+                <td>{{ biere.type3Biere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if biere.profilBiere is not null and biere.profilBiere is not empty %}
+                <th>Profil :</th>
+                <td>{{ biere.profilBiere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if biere.couleurBiere is not null and biere.couleurBiere is not empty %}
+                <th>Couleur :</th>
+                <td>{{ biere.couleurBiere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if biere.fabricantBiere is not null and biere.fabricantBiere is not empty %}
+                <th>Fabricant :</th>
+                <td>{{ biere.fabricantBiere }}</td>
+                {% endif %}
+            </tr>
+            {# <tr>
+                <th>Conditionnement</th>
+                <td>{{ biere.conditionnement }}</td>
+            </tr>
+            <tr>
+                <th>Origine_Biere</th>
+                <td>{{ biere.origineBiere }}</td>
+            </tr> #}
+            <tr>
+                {% if biere.descriptionBiere is not null and biere.descriptionBiere is not empty %}
+                <th>Description :</th>
+                <td>{{ biere.descriptionBiere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if biere.ingredientsBiere is not null and biere.ingredientsBiere is not empty %}
+                <th>Ingredients :</th>
+                <td>{{ biere.ingredientsBiere }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Consigne :</th>
+                <td>{{ biere.consigneBiere ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Bio :</th>
+                <td>{{ biere.BioBiere ? 'Oui' : 'Non' }}</td>
+            </tr>
+            {# <tr>
+                <th>Promo_Biere</th>
+                <td>{{ biere.promoBiere ? 'Oui' : 'Non' }}</td>
+            </tr> #}
+            <tr>
+                <th>Sans Alcool :</th>
+                <td>{{ biere.sansAlcBiere ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Sans Gluten :</th>
+                <td>{{ biere.SGlutenBiere ? 'Oui' : 'Non' }}</td>
+            </tr>
+            {# <tr>
+                <th>Actif</th>
+                <td>{{ biere.actif ? 'Oui' : 'Non' }}</td>
+            </tr> #}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

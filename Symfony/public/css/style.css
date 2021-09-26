@@ -1,0 +1,33 @@
+nav {
+    position: sticky !important; 
+    top: 0 !important;
+    text-align: center !important;
+    z-index: 100 !important;
+}
+.container {
+    overflow: auto !important;
+    max-width: 100%;
+}
+/* .header { 
+    position: sticky !important; 
+    top: 56px !important; 
+    background-color: white !important; 
+} */
+.description {
+    width: 300px !important;
+}
+.card {
+    /* flex-direction: row !important; */
+    margin: 15px;
+}
+.card-deck {
+    flex-flow: row wrap;
+    display: -webkit-box;
+}
+.voidLimited {
+    max-height:25%;
+    overflow: auto;
+}
+tr.bg-primary>td {
+    font-weight: bold !important;
+}

@@ -1,0 +1,37 @@
+
+
+{% extends 'base.html.twig' %}
+{% block title %}Profil{% endblock %}
+{% block body %}
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span> </span></div>
+        </div>
+        <div class="col-md-7 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profil de {{ app.user.firstname }} {{ app.user.name }}</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Nom :</label><input type="text" class="form-control" placeholder="first name" value=" {{ app.user.firstname }} "></div>
+                    <div class="col-md-6"><label class="labels">Prénom :</label><input type="text" class="form-control" value="Marie" placeholder="{{ app.user.name }}"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Téléphone :</label><input type="text" class="form-control" placeholder="enter phone number" value="{{ app.user.phone }}"></div>
+                    <div class="col-md-12"><label class="labels">Address Ligne 1 :</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{ app.user.adressLine1 }}"></div>
+                    <div class="col-md-12"><label class="labels">Address Ligne 2 :</label><input type="text" class="form-control" placeholder="enter address line 2" value="{{ app.user.adressLine2 }}"></div>
+                    <div class="col-md-12"><label class="labels">Code Postal :</label><input type="text" class="form-control" placeholder="enter address line 2" value="{{ app.user.postcode }}"></div>
+                    <div class="col-md-12"><label class="labels">Email :</label><input type="text" class="form-control" placeholder="enter email id" value="{{ app.user.email }}"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Pays :</label><input type="text" class="form-control" placeholder="country" value="{{ app.user.country }}"></div>
+                </div>
+                <div class="mt-5 text-center"><a href="{{ path('users_edit') }}" class="btn btn-primary">Sauvegarder</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

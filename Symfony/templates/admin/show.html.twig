@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bieres index{% endblock %}
+
+{% block body %}
+    <h1>Bieres index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle_Biere</th>
+                <th>Marque_Biere</th>
+                <th>TitreAlcool_Biere</th>
+                <th>Contenance_Biere</th>
+                <th>PrixAchat_Biere</th>
+                <th>PrixVente_Biere</th>
+                <th>PrixTTC_Biere</th>
+                <th>Type1_Biere</th>
+                <th>Type2_Biere</th>
+                <th>Type3_Biere</th>
+                <th>Profil_Biere</th>
+                <th>Couleur_Biere</th>
+                <th>Fabricant_Biere</th>
+                <th>Conditionnement</th>
+                <th>Origine_Biere</th>
+                <th>Description_Biere</th>
+                <th>Ingredients_Biere</th>
+                <th>Consigne_Biere</th>
+                <th>Bio_Biere</th>
+                <th>Promo_Biere</th>
+                <th>SansAlc_Biere</th>
+                <th>SGluten_Biere</th>
+                <th>Actif</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {# {% for biere in bieres %} #}
+            <tr>
+                <td>{{ biere.id }}</td>
+                <td>{{ biere.libelleBiere }}</td>
+                <td>{{ biere.marqueBiere }}</td>
+                <td>{{ biere.titreAlcoolBiere }}</td>
+                <td>{{ biere.contenanceBiere }}</td>
+                <td>{{ biere.prixAchatBiere }}</td>
+                <td>{{ biere.prixVenteBiere }}</td>
+                <td>{{ biere.prixTTCBiere }}</td>
+                <td>{{ biere.type1Biere }}</td>
+                <td>{{ biere.type2Biere }}</td>
+                <td>{{ biere.type3Biere }}</td>
+                <td>{{ biere.profilBiere }}</td>
+                <td>{{ biere.couleurBiere }}</td>
+                <td>{{ biere.fabricantBiere }}</td>
+                <td>{{ biere.conditionnement }}</td>
+                <td>{{ biere.origineBiere }}</td>
+                <td>{{ biere.descriptionBiere }}</td>
+                <td>{{ biere.ingredientsBiere }}</td>
+                <td>{{ biere.consigneBiere ? 'Yes' : 'No' }}</td>
+                <td>{{ biere.BioBiere ? 'Yes' : 'No' }}</td>
+                <td>{{ biere.promoBiere ? 'Yes' : 'No' }}</td>
+                <td>{{ biere.sansAlcBiere ? 'Yes' : 'No' }}</td>
+                <td>{{ biere.SGlutenBiere ? 'Yes' : 'No' }}</td>
+                <td>{{ biere.actif ? 'Yes' : 'No' }}</td>
+                <td>
+                    {# <a href="{{ path('admin_show', {'id': biere.id}) }}">show</a> #}
+                    <a href="{{ path('admin_edit', {'id': biere.id}) }}">edit</a>
+                    <a href="{{ path('admin_allBeers') }}">back to list</a>
+                    {{ include('bieres/_delete_form.html.twig') }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {# {% endfor %} #}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_new') }}">Create new</a>
+{% endblock %}
